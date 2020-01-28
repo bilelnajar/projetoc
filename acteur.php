@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8" />
-	<link rel="stylesheet" href="style.css" />        
-	<title>GBAF Groupement banque et assurance francais</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="style.css" />        
+		<title>GBAF Groupement banque et assurance francais</title>
+			<script src="https://kit.fontawesome.com/fbd678828e.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+	<body>
 
   <?php include("entete.php"); ?>
 
@@ -28,5 +29,5 @@
 
   <?php include("pieddepage.php"); ?>
 
-</body>
+	</body>
 </html>

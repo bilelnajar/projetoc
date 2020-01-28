@@ -28,12 +28,10 @@ header
     font-weight: bold;
     margin: 0px 60px 60px 0px;
 }
-.nom img
+i
 {
-    float: left;
-    width: 20px;
+    width: 60px;
     height: auto;
-    margin-right: 2px;
 }
 #presentation h1
 {
@@ -111,27 +109,35 @@ footer a
 }
 
 /* --- CSS page login--- */
-
 #login
 {
     margin: auto;
     width: 900px;
-    display: flex;
-    justify-content: space-between;
     margin-top: 50px;
+    margin-bottom: : 50px;
+}
+#nouveau a
+{
+    color: red;
+    font-weight: bold;
 }
 section
 {
-    margin-bottom: 200px;
+    margin-bottom: 50px;
 }
 legend
 {
     font-weight: bold;
     font-size: large;
 }
+input
+{
+    width: 100%;
+}
 .bouton
 {
     text-align: center;
+    border-color: red;
 }
 
 /* --- CSS page acteur--- */

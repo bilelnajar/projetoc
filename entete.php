@@ -1,14 +1,22 @@
 <!-- En tête -->
       <header>
+
           <figure>
-          <img class="logo" src="images/logo-gbaf.png" alt="logo de gbaf" />
+              <img class="logo" src="images/logo-gbaf.png" alt="logo de gbaf" />
           </figure>
+
         <div class="nom">
-          <img src="images/user.jpg" alt="pictogramme utilisateur" />
+<!-- code picto font awesome -->          
+              <i class="fas fa-user"></i>
 <!-- PHP -->
                 <?php
                 $nom_prenom = 'Nom et Prénom';
                 echo $nom_prenom;
+                ?>
+                <br />
+                <?php
+                $logout = 'Se déconnecter';
+                echo $logout;
                 ?>
         </div>
       </header>
