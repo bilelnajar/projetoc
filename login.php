@@ -6,11 +6,9 @@
     <title>Login</title>
   </head>
 
-  <body>
-    <header>
-      <img class="logo" src="images/logo-gbaf.png" alt="logo de gbaf" />   
-    </header>
+  <?php include("entete.php"); ?>
 
+<!-- Login membre-->
     <section id="login">
       <div class="existant">
        <form method="post" action="traitement.php">
@@ -26,36 +24,35 @@
           </fieldset>
         </p>
       </form>
-    </div>  
+    </div>	
 
-    <div class="nouveau">   
+<!-- login nouveau membre--> 
+    <div class="nouveau">		
       <form method="post" action="traitement.php">
-        <p>
-          <fieldset>
-            <legend>Nouveau membre</legend>
-            <label for="name">Nom et prénom :</label>
-            <input type="text" name="name" id="name" required />
+      	<p>
+      		<fieldset>
+      			<legend>Nouveau membre</legend>
+      			<label for="name">Nom et prénom :</label>
+      			<input type="text" name="name" id="name" required />
             <br />
             <label for="pseudo">Votre pseudo :</label>
             <input type="text" name="pseudo" id="pseudo" required />
-            <br />   
+            <br />	 
             <label for="email">Email :</label>
             <input type="email" required />
-            <br />  
-            <label for="pass">Nouveau mot de passe :</label>       
+            <br />	
+            <label for="pass">Nouveau mot de passe :</label>   	   
             <input type="password" name="pass" id="pass" required /><br />
             <label for="pass">Confirmez votre mot de passe :</label>
             <input type="password" name="pass" id="pass" required /><br />
             <div class="bouton"><input type="submit" value="Envoyer" /></div>
           </fieldset>
         </p>
-      </form>   
-    </div>  
+      </form>		
+    </div>	
   </section>
 
-  <footer>
-    <p>Copyright 2020 | <a href="#">Mentions légales</a> | <a href="#">Contact</a> | By Bilel Najar for project 3.
-    </p>
-  </footer> 
+  <?php include("pieddepage.php"); ?>
+
 </body>
 </html>

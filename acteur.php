@@ -7,15 +7,8 @@
 </head>
 
 <body>
-	<header>
-		<fig>
-			<img class="logo" src="images/logo-gbaf.png" alt="logo de gbaf" />
-		</fig>
-		<div class="nom">
-			<img src="images/user.jpg" alt="pictogramme utilisateur" />
-			<p>Nom & Prénom</p>
-		</div>
-	</header>
+
+  <?php include("entete.php"); ?>
 
 	<section>
 		<fig>
@@ -33,9 +26,7 @@
 			
 	</section>
 
-	<footer>
-		<p>Copyright 2020 | <a href="#">Mentions légales</a> | <a href="#">Contact</a> | By Bilel Najar for project 3.
-		</p>
-	</footer>
+  <?php include("pieddepage.php"); ?>
+
 </body>
 </html>
