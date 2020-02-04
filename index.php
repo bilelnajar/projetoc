@@ -9,7 +9,7 @@
 
       <body>
 
-  <?php include("entete.php"); ?>
+  <?php require("entete.php"); ?>
 
   <!-- Partie presentation -->
         <section id="presentation">
@@ -72,7 +72,7 @@
           </div>
         </section>
 
-  <?php include("pieddepage.php"); ?>
+  <?php require("pieddepage.php"); ?>
 
       </body>
     </html>

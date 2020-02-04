@@ -6,7 +6,13 @@
       <title>Login</title>
     </head>
   <body>
-    <?php include("entete.php"); ?>
+
+<!-- En tête -->
+      <header>
+          <figure>
+            <img class="logologin" src="images/logo-gbaf.png" alt="logo de gbaf" />
+          </figure>
+      </header>
 
     <!-- Login membre-->
   <section> 
@@ -22,6 +28,7 @@
             <input type="password" name="pass" id="pass" required /><br />
             <div class="bouton"><input type="submit" value="Connexion" /></div>
           </fieldset>
+          <a href="">Mot de passe oublié ?</a>
         </p>
       </form>
     </div>

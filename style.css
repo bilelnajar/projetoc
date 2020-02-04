@@ -109,6 +109,12 @@ footer a
 }
 
 /* --- CSS page login--- */
+.logologin
+{
+    margin-left: 380px;
+    width: 160px;
+    height: auto;
+}
 #login
 {
     margin: auto;
@@ -145,4 +151,25 @@ input
 .acteurcde
 {
     width: 100%;
+}
+#commentaires
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#block h3
+{
+    margin-left: 20px;
+}
+#newcom
+{
+    margin: 10px 20px;
+    text-align: right;
+
+}
+#detail
+{
+    border: 1px solid black;
+    margin: 10px 10px;
+    padding: 10px 10px;
 }

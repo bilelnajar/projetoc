@@ -7,9 +7,25 @@
   </head>
 
   <body>
+    
+<!-- En tête -->
+      <header>
+          <figure>
+            <img class="logologin" src="images/logo-gbaf.png" alt="logo de gbaf" />
+          </figure>
+      </header>
 
-  <?php include("entete.php"); ?>
-
+  <?php
+  try
+  {
+    $bdd = new PDO('mysql:host=1x22r.myd.infomaniak.com;dbname=1x22r_projet_3;charset=utf8', '1x22r_projet_3', 'Projet3$$$');
+  }
+    catch (Exception $e)
+{
+        die('Erreur : ' . $e->getMessage());
+}
+  ?>
+  
 <!-- login nouveau membre--> 
   <section>
     <div class="nouveau">		
@@ -40,7 +56,7 @@
             <label for="response">Réponse à la question secrète :</label>
             <input type="text" name="response" id="response" required />
             <br />
-            <div class="bouton"><input type="submit" value="Envoyer" /></div>
+            <div class="bouton"><input type="submit" name="forminscription" value="Envoyer" /></div>
           </fieldset>
         </p>
       </form>		

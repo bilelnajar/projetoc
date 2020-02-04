@@ -9,12 +9,12 @@
 
 	<body>
 
-  <?php include("entete.php"); ?>
+  <?php require("entete.php"); ?>
 
 	<section>
-		<fig>
+		<figure>
 			<img class="acteurcde" src="images/cde.png" alt="logo cde" />
-		</fig>
+		</figure>
 			<h2>CDE</h2>
 			<p>
 				La CDE (Chambre Des Entrepreneurs) accompagne les entreprises dans leurs démarches de formation.<br /> 
@@ -22,12 +22,26 @@
 			</p>
 	</section>
 
-	<section>
-			<h3>Commentaires</h3>
-			
+	<section id="commentaires">
+
+		<div id="block">
+				<h3>X Commentaires</h3>
+			<div id="newcom">
+				<p>Nouveau commentaire</p>
+
+			</div>	
+			<div id="detail">
+				<p>
+					Prénom<br />
+					Date<br />
+					Texte<br />
+				</p>
+			</div>
+		</div>
+
 	</section>
 
-  <?php include("pieddepage.php"); ?>
+  <?php require("pieddepage.php"); ?>
 
 	</body>
 </html>

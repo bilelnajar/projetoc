@@ -2,7 +2,7 @@
       <header>
 
           <figure>
-              <img class="logo" src="images/logo-gbaf.png" alt="logo de gbaf" />
+             <a href="index.php"> <img class="logo" src="images/logo-gbaf.png" alt="logo de gbaf" /></a>
           </figure>
 
         <div class="nom">
