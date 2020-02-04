@@ -14,7 +14,6 @@ header
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin: 15px 50px 50px 20px;
     border-bottom: 1px black solid;
 }
 .logo
@@ -122,6 +121,10 @@ footer a
     margin-top: 50px;
     margin-bottom: : 50px;
 }
+#nouveau
+{
+    margin-top: 50px;
+}
 #nouveau a
 {
     color: red;
@@ -172,4 +175,18 @@ input
     border: 1px solid black;
     margin: 10px 10px;
     padding: 10px 10px;
+}
+
+@media screen and (max-width: 1024px)
+{
+    /* Propriétés CSS ici */
+    body
+    {
+        width: auto;
+    }
+    header
+    {
+        flex-direction: column;
+        align-items: center;
+    }
 }
