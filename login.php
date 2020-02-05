@@ -2,9 +2,12 @@
   <html>
     <head>
       <meta charset="utf-8" />
-      <link rel="stylesheet" href="style.css" />        
+      <link rel="stylesheet" href="style.css" />
+<!-- résolution inférieure à 1280px -->              
+      <link rel="stylesheet" media="screen and (max-width: 1024px)" href="petite_resolution.css" />        
       <title>Login</title>
     </head>
+    
   <body>
 
 <!-- En tête -->
@@ -17,7 +20,7 @@
     <!-- Login membre-->
   <section> 
     <div id="login">
-      <form method="post" action="traitement.php">
+      <form method="post" action="index.php">
         <p>
           <fieldset>
             <legend>Compte existant</legend>

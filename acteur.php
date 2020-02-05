@@ -15,6 +15,24 @@
 		<figure>
 			<img class="acteurcde" src="images/cde.png" alt="logo cde" />
 		</figure>
+
+<!-- Entrés des données à partir de la BDD -->		
+		  <?php
+ try 
+{ 
+    $bdd = new PDO('mysql:host=localhost;dbname=P3;charset=utf8', 'root', '');
+}
+catch (Exception $e)
+{
+        die('Erreur : ' . $e->getMessage());
+}
+$reponse = $bdd->query('SELECT * FROM acteur');
+while ($donnees = $reponse->fetch())
+{
+	echo '<p>' . $donnees['acteur'] . '</p>';
+}
+  ?>
+  
 			<h2>CDE</h2>
 			<p>
 				La CDE (Chambre Des Entrepreneurs) accompagne les entreprises dans leurs démarches de formation.<br /> 

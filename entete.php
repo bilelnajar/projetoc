@@ -10,8 +10,7 @@
               <i class="fas fa-user"></i>
 <!-- PHP -->
                 <?php
-                $nom_prenom = 'Nom et Prénom';
-                echo $nom_prenom;
+                echo $_POST['name'];
                 ?>
                 <br />
                 <?php

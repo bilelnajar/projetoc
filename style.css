@@ -110,7 +110,7 @@ footer a
 /* --- CSS page login--- */
 .logologin
 {
-    margin-left: 380px;
+    align-items: center;
     width: 160px;
     height: auto;
 }
@@ -187,6 +187,10 @@ input
     header
     {
         flex-direction: column;
+        align-items: center;
+    }
+    .logologin
+    {
         align-items: center;
     }
 }

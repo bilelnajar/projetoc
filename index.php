@@ -35,44 +35,82 @@
 
   <!-- Partie partenaires -->
         <section id="partenaires">
+
           <h2>Découvrez les différents acteurs/partenaires du système bancaire français</h2>
           <div id="block">
             <div class="partenaire">
               <figure>
                 <img class="cde" src="images/cde.png" alt="logo cde" />
               </figure>
-              <h3>CDE</h3>
-              <p>La CDE (Chambre Des Entrepreneurs) accompagne les entreprises dans leurs démarches de formation.
-              </p>
+<!-- Entrés des données à partir de la BDD -->    
+      <?php
+ try 
+{ 
+    $bdd = new PDO('mysql:host=localhost;dbname=P3;charset=utf8', 'root', '');
+}
+catch (Exception $e)
+{
+        die('Erreur : ' . $e->getMessage());
+}
+$reponse = $bdd->query('SELECT acteur, description FROM acteur WHERE acteur="CDE"');
+while ($donnees = $reponse->fetch())
+{
+  echo '<p>' . $donnees['acteur'] . ' <br /> ' . $donnees['description'] . '</p>';
+}
+?>
               <button><a href="acteur.php">Lire la suite</a></button>
+            </div>  
 
-    <!-- inscrire en php
+<!-- DSA France -->
             <div class="partenaire">
               <img src="images/dsa_france.png" alt="logo dsa france" />
-              <h3>Dsa France</h3>
-              <p>Dsa France accélère la croissance du territoire et s’engage avec les collectivités territoriales.
-                Nous accompagnons les entreprises dans les étapes clés de leur évolution.
-              </p>
-              <a href="#">Lire la suite</a>
+
+<?php
+$bdd = new PDO('mysql:host=localhost;dbname=P3;charset=utf8', 'root', '');
+
+$reponse = $bdd->query('SELECT acteur, description FROM acteur WHERE acteur="Dsa France"');
+while ($donnees = $reponse->fetch())
+{
+  echo '<p>' . $donnees['acteur'] . ' <br /> ' . $donnees['description'] . '</p>';
+}
+    ?>  
+              <button><a href="acteur.php">Lire la suite</a></button>
             </div>
 
+<!-- Formation&co -->
             <div class="partenaire">
               <img src="images/formation_co.png" alt="logo formation co" />
-              <h3>Formation CO</h3>
-              <p>Formation&co est une association française présente sur tout le territoire. Nous proposons à des personnes issues de tout milieu de devenir entrepreneur grâce à un crédit et un accompagnement professionnel et personnalisé.
-              </p>
-              <a href="#">Lire la suite</a>
+
+<?php
+$bdd = new PDO('mysql:host=localhost;dbname=P3;charset=utf8', 'root', '');
+
+$reponse = $bdd->query('SELECT acteur, description FROM acteur WHERE acteur="Formation&co"');
+while ($donnees = $reponse->fetch())
+{
+  echo '<p>' . $donnees['acteur'] . ' <br /> ' . $donnees['description'] . '</p>';
+}
+    ?> 
+
+              <button><a href="acteur.php">Lire la suite</a></button>
             </div>
 
+<!-- Protectpeople -->
             <div class="partenaire">
               <img src="images/protectpeople.png" alt="logo protect people" />
-              <h3>Protect People</h3>
-              <p>Protect People finance la solidarité nationale. Nous appliquons le principe édifié par la Sécurité sociale française en 1945 : permettre à chacun de bénéficier d’une protection sociale.
-              </p>
-              <a href="#">Lire la suite</a>
-    -->
 
+<?php
+$bdd = new PDO('mysql:host=localhost;dbname=P3;charset=utf8', 'root', '');
+
+$reponse = $bdd->query('SELECT acteur, description FROM acteur WHERE acteur="Protectpeople"');
+while ($donnees = $reponse->fetch())
+{
+  echo '<p>' . $donnees['acteur'] . ' <br /> ' . $donnees['description'] . '</p>';
+}
+    ?> 
+
+              <button><a href="acteur.php">Lire la suite</a></button>
             </div>
+
           </div>
         </section>
 
