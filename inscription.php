@@ -9,7 +9,6 @@
   </head>
 
   <body>
-    <!-- code à conserver ne fonctionne pas chez infomaniak 
   <?php
       $dbName = "1x22r_projet_3";
       $username = "1x22r_projet_3";
@@ -22,7 +21,6 @@
         echo $e->getMessage();
       }
      ?> 
-      -->
 
 <!-- En tête -->
       <header>

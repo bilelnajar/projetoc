@@ -17,7 +17,7 @@
 
   <!-- Partie presentation -->
         <section id="presentation">
-          <h1>Le Groupement Banque Assurance Français</h1>
+          <h1>Le Groupement Banque Assurance Française</h1>
           <p>Le GBAF (groupement banque et assurance français) est une fédération représentant les 6 grands groupes français:</p>
           <ul>
             <li>BNP Paribas</li>
@@ -38,81 +38,52 @@
 
           <h2>Découvrez les différents acteurs/partenaires du système bancaire français</h2>
           <div id="block">
-            <div class="partenaire">
-              <figure>
-                <img class="cde" src="images/cde.png" alt="logo cde" />
-              </figure>
+
 <!-- Entrés des données à partir de la BDD -->    
-      <?php
- try 
-{ 
-    $bdd = new PDO('mysql:host=localhost;dbname=P3;charset=utf8', 'root', '');
-}
-catch (Exception $e)
+<?php
+      $dbName = "1x22r_projet_3";
+      $username = "1x22r_projet_3";
+      $password = "Projet3$$$";
+
+      try 
+      {
+$bdd = new PDO("mysql:host=1x22r.myd.infomaniak.com;dbname=$dbName", $username, $password);
+      }
+      catch (PDOException $e) 
+      {
+        echo $e->getMessage();
+      }
+
+$reponse = $bdd->query('SELECT * FROM Acteur');
+
+      while ($donnees = $reponse->fetch())
 {
-        die('Erreur : ' . $e->getMessage());
+  echo 
+           '<figure><img  src="' . $donnees['logo'] . '" /></figure>' . '<br /><br />' .
+      '<p>' . $donnees['acteur'] . ' <br /><br /> ' . $donnees['description'] . '</p>';
 }
-$reponse = $bdd->query('SELECT acteur, description FROM acteur WHERE acteur="CDE"');
-while ($donnees = $reponse->fetch())
+
+?>    
+<!-- modele a conserver 
+      while ($donnees = $reponse->fetch())
 {
-  echo '<p>' . $donnees['acteur'] . ' <br /> ' . $donnees['description'] . '</p>';
+  echo '<img class="cde" src="' . $donnees['logo'] . '"/>';
+              '<h3>' . $donnees['acteur'] . '</h3>';
+              '<p>' . $donnees['description'] . '</p>';
 }
-?>
-              <button><a href="acteur.php">Lire la suite</a></button>
+
+?>   
+-->
             </div>  
 
 <!-- DSA France -->
             <div class="partenaire">
-              <img src="images/dsa_france.png" alt="logo dsa france" />
 
-<?php
-$bdd = new PDO('mysql:host=localhost;dbname=P3;charset=utf8', 'root', '');
-
-$reponse = $bdd->query('SELECT acteur, description FROM acteur WHERE acteur="Dsa France"');
-while ($donnees = $reponse->fetch())
-{
-  echo '<p>' . $donnees['acteur'] . ' <br /> ' . $donnees['description'] . '</p>';
-}
-    ?>  
-              <button><a href="acteur.php">Lire la suite</a></button>
             </div>
 
-<!-- Formation&co -->
-            <div class="partenaire">
-              <img src="images/formation_co.png" alt="logo formation co" />
+                       
 
-<?php
-$bdd = new PDO('mysql:host=localhost;dbname=P3;charset=utf8', 'root', '');
-
-$reponse = $bdd->query('SELECT acteur, description FROM acteur WHERE acteur="Formation&co"');
-while ($donnees = $reponse->fetch())
-{
-  echo '<p>' . $donnees['acteur'] . ' <br /> ' . $donnees['description'] . '</p>';
-}
-    ?> 
-
-              <button><a href="acteur.php">Lire la suite</a></button>
-            </div>
-
-<!-- Protectpeople -->
-            <div class="partenaire">
-              <img src="images/protectpeople.png" alt="logo protect people" />
-
-<?php
-$bdd = new PDO('mysql:host=localhost;dbname=P3;charset=utf8', 'root', '');
-
-$reponse = $bdd->query('SELECT acteur, description FROM acteur WHERE acteur="Protectpeople"');
-while ($donnees = $reponse->fetch())
-{
-  echo '<p>' . $donnees['acteur'] . ' <br /> ' . $donnees['description'] . '</p>';
-}
-    ?> 
-
-              <button><a href="acteur.php">Lire la suite</a></button>
-            </div>
-
-          </div>
-        </section>
+          </section>
 
   <?php require("pieddepage.php"); ?>
 

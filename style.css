@@ -64,8 +64,7 @@ li
     flex-direction: column;
     text-align: justify;
     border: 1px solid black;
-    margin: auto;
-    margin-top: 30px;
+
 }
 .partenaire
 {
@@ -74,7 +73,7 @@ li
     padding: 10px 10px;
 }
 
-.partenaire img
+#block img
 {
     width: 90px;
     height: auto;
