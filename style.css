@@ -62,9 +62,8 @@ li
 {
     display: flex;
     flex-direction: column;
-    text-align: justify;
     border: 1px solid black;
-
+    margin: 20px 30px;
 }
 .partenaire
 {
@@ -79,6 +78,13 @@ li
     height: auto;
     float: left;
     margin-right: 25px;
+    margin-top: 30px;
+}
+#block p
+{
+   text-align: justify;
+   clear: both;
+   margin: 20px;
 }
 
 button

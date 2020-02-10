@@ -9,9 +9,7 @@
 <!-- code picto font awesome -->          
               <i class="fas fa-user"></i>
 <!-- PHP -->
-                <?php
-                echo $_POST['name'];
-                ?>
+                <?php echo $_GET['user']; ?>
                 <br />
                 <?php
                 $logout = 'Se déconnecter';

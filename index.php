@@ -59,8 +59,8 @@ $reponse = $bdd->query('SELECT * FROM Acteur');
       while ($donnees = $reponse->fetch())
 {
   echo 
-           '<figure><img  src="' . $donnees['logo'] . '" /></figure>' . '<br /><br />' .
-      '<p>' . $donnees['acteur'] . ' <br /><br /> ' . $donnees['description'] . '</p>';
+           '<div class="partenaire"><figure><img  src="' . $donnees['logo'] . '" /></figure>' . '<br /><br />' .
+      '<p>' . $donnees['acteur'] . ' <br /><br /> ' . $donnees['description'] . '</p><button>Lire la suite</button></div>';
 }
 
 ?>    
@@ -74,14 +74,7 @@ $reponse = $bdd->query('SELECT * FROM Acteur');
 
 ?>   
 -->
-            </div>  
-
-<!-- DSA France -->
-            <div class="partenaire">
-
-            </div>
-
-                       
+            </div>                      
 
           </section>
 
