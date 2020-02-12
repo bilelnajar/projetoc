@@ -59,11 +59,13 @@ $reponse = $bdd->query('SELECT * FROM Acteur');
       while ($donnees = $reponse->fetch())
 {
   echo 
-           '<div class="partenaire"><figure><img  src="' . $donnees['logo'] . '" /></figure>' . '<br /><br />' .
-      '<p>' . $donnees['acteur'] . ' <br /><br /> ' . $donnees['description'] . '</p><button>Lire la suite</button></div>';
+      '<div class="partenaire">
+          <figure><img  src="' . $donnees['logo'] . '" /></figure>' . '<br /><br />' .
+          '<p>' . $donnees['acteur'] .  ' <br /><br />' . $donnees['description'] . '</p><button><a href="cde.php">Lire la suite</a></button>
+      </div>';
 }
 
-?>    
+?>  
 <!-- modele a conserver 
       while ($donnees = $reponse->fetch())
 {

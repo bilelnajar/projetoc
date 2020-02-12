@@ -27,12 +27,13 @@
             <label for="pseudo">Votre pseudo :</label>
             <input type="text" name="pseudo" id="pseudo" required />           
             <br />
-            <label for="pass">Votre mot de passe :</label>
-            <input type="password" name="pass" id="pass" required /><br />
+            <label for="password">Votre mot de passe :</label>
+            <input type="password" name="password" id="password" required /><br />
             <div class="bouton"><input type="submit" value="Connexion" /></div>
             <?php
-            // check vars
+            // check variable
             if (isset($_POST['pseudo']) && isset($_POST['pass']))
+
             {
               $dbName = "1x22r_projet_3";
               $username = "1x22r_projet_3";
@@ -47,12 +48,17 @@
                 echo $e->getMessage();
               }
 
-              $reponse = $bdd->query("SELECT * FROM Account WHERE username='" . $_POST['pseudo'] . "' AND password='" . $_POST['pass'] . "'");
+              $reponse = $bdd->query("SELECT * FROM Account WHERE username='" . $_POST['pseudo'] . "' AND password='" . $_POST['password'] . "'");
 
               while ($donnees = $reponse->fetch())
               {
                 header("Location:./index.php?user=" . $donnees['nom'] . " " . $donnees['prenom']);
               }
+
+//            else {
+//                echo "Identifiant non reconnu, Veuillez vous inscrire en cliquant sur le lien ci-dessous !";  AFFICHE ERREUR
+//              }    
+
             }
             ?>
           </fieldset>

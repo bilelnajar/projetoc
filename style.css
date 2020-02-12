@@ -1,5 +1,19 @@
-/* --- CSS page index--- */
+/* -- Inscription -- */
+.nouveau button
+{
+    background-color: red;
+    border: 1px solid black;
+    padding:5px 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none; 
+}
 
+
+/* --- CSS page index--- */
 body
 {
     font-family: 'Trebuchet MS', Arial, sans-serif;
@@ -80,11 +94,11 @@ li
     margin-right: 25px;
     margin-top: 30px;
 }
-#block p
+.partenaire p
 {
-   text-align: justify;
-   clear: both;
-   margin: 20px;
+    text-align: justify;
+    clear: both;
+    margin: 20px;
 }
 
 button

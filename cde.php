@@ -12,32 +12,31 @@
   <?php require("entete.php"); ?>
 
 	<section>
-		<figure>
-			<img class="acteurcde" src="images/cde.png" alt="logo cde" />
-		</figure>
+
 
 <!-- Entrés des données à partir de la BDD -->		
-		  <?php
+<?php
  try 
 { 
-    $bdd = new PDO('mysql:host=localhost;dbname=P3;charset=utf8', 'root', '');
+    $bdd = new PDO("mysql:host=1x22r.myd.infomaniak.com;dbname=1x22r_projet_3", "1x22r_projet_3", "Projet3$$$");
 }
-catch (Exception $e)
+catch (PDOException $e)
 {
-        die('Erreur : ' . $e->getMessage());
+        echo('Erreur : ' . $e->getMessage());
 }
-$reponse = $bdd->query('SELECT * FROM acteur');
+
+$reponse = $bdd->query('SELECT * FROM Acteur WHERE acteur=\'CDE\'');
+
 while ($donnees = $reponse->fetch())
 {
-	echo '<p>' . $donnees['acteur'] . '</p>';
+	echo '<p>' . $donnees['acteur'] . '</p>' 
+		. '<br/><br/>' . 
+		'<figure><img  src="' . $donnees['logo'] . '" /></figure>'
+		. '<br/><br/>' .
+		'<p>'. $donnees['description'] .'</p>';
 }
   ?>
   
-			<h2>CDE</h2>
-			<p>
-				La CDE (Chambre Des Entrepreneurs) accompagne les entreprises dans leurs démarches de formation.<br /> 
-				Son président est élu pour 3 ans par ses pairs, chefs d’entreprises et présidents des CDE.
-			</p>
 	</section>
 
 	<section id="commentaires">
