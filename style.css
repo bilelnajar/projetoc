@@ -46,6 +46,10 @@ i
     width: 60px;
     height: auto;
 }
+#presentation
+{
+    display: none;
+}
 #presentation h1
 {
     margin-top: 50px;
@@ -69,6 +73,7 @@ li
 
 #partenaires
 {
+    display: none;
     margin-top: 50px;
     margin-bottom: 50px;
 }
@@ -85,7 +90,11 @@ li
     margin: 10px 10px;
     padding: 10px 10px;
 }
-
+.partenaire h2
+{
+    text-align: center;
+    font-weight: bold;
+}
 #block img
 {
     width: 90px;
@@ -97,7 +106,6 @@ li
 .partenaire p
 {
     text-align: justify;
-    clear: both;
     margin: 20px;
 }
 

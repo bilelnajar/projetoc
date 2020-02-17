@@ -16,38 +16,7 @@
             <img class="logologin" src="images/logo-gbaf.png" alt="logo de gbaf" />
           </figure>
     </header>
-
-<!-- Connexion en php à la base de données-->
- <?php
-//      $dbName = "1x22r_projet_3";
- //     $username = "1x22r_projet_3";
- //     $password = "Projet3$$$";
-
-//      try{
- //       $bdd = new PDO("mysql:host=1x22r.myd.infomaniak.com;dbname=$dbName", $username, $password);
- //       $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//
-//        $insertion = "INSERT INTO Account(nom,prenom,username,password,question,reponse) 
-//                      VALUES ('Napoleon', 'Bona', 'bonapo', 'Projet3', '', '')";
-
-//        $bdd->exec($insertion);
- //     }
-
-//      catch (PDOException $e){
- //       echo $e->getMessage();
- //     }
-?> 
-
-<!-- 2eme méthode de connexion à BDD -->
-<?php 
-
-    require 'pdo.php'; 
-
-    $req = $bdd->prepare("INSERT INTO Account SET username = ?, password = ?, question = ?, reponse = ?"); 
-
-    $req->execute([$_POST['username'], $_POST['password'], $_POST['question'], $_POST['reponse']]); 
-    die('Votre compte a bien été crée'); 
-?>
+ 
 <!-- login nouveau membre--> 
   <section>
     <div class="nouveau">		
@@ -64,19 +33,27 @@
             <label for="username">Votre pseudo :</label>
             <input type="text" name="username" id="username" required />
             <br />	 
-            <label for="password">Nouveau mot de passe :</label>   	   
+            <label for="password">Créer votre mot de passe :</label>   	   
             <input type="password" name="password" id="password" required /><br />
-            <label for="password">Confirmez votre mot de passe :</label>
-            <input type="password" name="password" id="password" required />
-            <br />
             <label for="question">Question secrète :</label>
             <input type="text" name="question" id="question" required />
             <br />
             <label for="reponse">Réponse à la question secrète :</label>
             <input type="text" name="reponse" id="reponse" required />  
-
             <br />
             <button type="submit" class="forminscription">M'inscrire</button>
+
+<!-- Connexion en php à la base de données-->
+
+<?php require 'pdo.php'; 
+
+$req = $bdd->prepare('INSERT INTO Account(nom, prenom, username, password, question, reponse) VALUES(:nom, :prenom, :username, :password, :question, :reponse)');
+
+$req->execute(array($_POST['nom'], $_POST['prenom'], $_POST['username'], $_POST['password'], $_POST['question'], $_POST['reponse']));
+
+header('location: index.php');
+?>
+
           </fieldset>
         </p>
       </form>		

@@ -15,17 +15,9 @@
 
 
 <!-- Entrés des données à partir de la BDD -->		
-<?php
- try 
-{ 
-    $bdd = new PDO("mysql:host=1x22r.myd.infomaniak.com;dbname=1x22r_projet_3", "1x22r_projet_3", "Projet3$$$");
-}
-catch (PDOException $e)
-{
-        echo('Erreur : ' . $e->getMessage());
-}
+<?php require('pdo.php');
 
-$reponse = $bdd->query('SELECT * FROM Acteur WHERE acteur=\'Formation&co\'');
+$reponse = $bdd->query('SELECT * FROM Acteur WHERE acteur=\'CDE\'');
 
 while ($donnees = $reponse->fetch())
 {

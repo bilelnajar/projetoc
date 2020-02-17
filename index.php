@@ -15,7 +15,9 @@
 
   <?php require("entete.php"); ?>
 
-  <!-- Partie presentation -->
+  <?php require('login.php'); ?>
+
+<!-- Partie presentation -->
         <section id="presentation">
           <h1>Le Groupement Banque Assurance Française</h1>
           <p>Le GBAF (groupement banque et assurance français) est une fédération représentant les 6 grands groupes français:</p>
@@ -33,26 +35,14 @@
 
         </section>
 
-  <!-- Partie partenaires -->
+<!-- Partie partenaires -->
         <section id="partenaires">
 
           <h2>Découvrez les différents acteurs/partenaires du système bancaire français</h2>
           <div id="block">
 
 <!-- Entrés des données à partir de la BDD -->    
-<?php
-      $dbName = "1x22r_projet_3";
-      $username = "1x22r_projet_3";
-      $password = "Projet3$$$";
-
-      try 
-      {
-$bdd = new PDO("mysql:host=1x22r.myd.infomaniak.com;dbname=$dbName", $username, $password);
-      }
-      catch (PDOException $e) 
-      {
-        echo $e->getMessage();
-      }
+<?php require 'pdo.php';
 
 $reponse = $bdd->query('SELECT * FROM Acteur');
 
