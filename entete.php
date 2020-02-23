@@ -1,19 +1,18 @@
 <!-- En tête -->
-      <header>
+<header>
 
-          <figure>
-             <a href="index.php"> <img class="logo" src="images/logo-gbaf.png" alt="logo de gbaf" /></a>
-          </figure>
-
-        <div class="nom">
-<!-- code picto font awesome -->          
-              <i class="fas fa-user"></i>
-<!-- PHP -->
-                <?php echo $_GET['user']; ?>
-                <br />
-                <?php
-                $logout = 'Se déconnecter';
-                echo $logout;
-                ?>
-        </div>
-      </header>
+  <figure>
+   <a href="index.php"> <img class="logo" src="images/logo-gbaf.png" alt="logo de gbaf" /></a>
+ </figure>
+ 
+ <?php if (isset($_SESSION['nom'])) {?>
+  <div class="nom">
+    <!-- code picto font awesome -->          
+    <i class="fas fa-user"></i>
+    <!-- PHP -->
+    <?php echo $_SESSION['prenom'] . ' ' . $_SESSION['nom']; ?>
+    <br />
+    <a href="logout.php">Se déconnecter</a>;
+  <?php } ?>
+</div>
+</header>

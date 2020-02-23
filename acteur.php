@@ -1,3 +1,8 @@
+<?php
+// démarage de la session
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,8 +19,21 @@
 	<section>
 
 
-<!-- Entrés des données à partir de la BDD -->		
+<!-- Entrées des données à partir de la BDD -->		
 <?php require('pdo.php');
+
+/* TESTER CE CODE
+$sql=mysql_query("SELECT ID_film FROM film WHERE nom_film = '$nom_film' ;");
+        while($tab= mysql_fetch_array($sql))
+        {
+            //recupéré l'id du film
+             
+            extract($tab);//Tous les champs de la classe film deviennent des variables du même nom que leur champ.
+                                      //par exemple ici le champs ID_film devient une variable $ID_film
+                                      // Elle n'est disponible que dans la boucle while
+            $id=$ID_film ;
+                 }
+echo "$id"; */
 
 $reponse = $bdd->query('SELECT * FROM Acteur WHERE acteur=\'CDE\'');
 
@@ -41,7 +59,7 @@ while ($donnees = $reponse->fetch())
 			</div>	
 			<div id="detail">
 				<p>
-					Prénom<br />
+					<?php echo $_SESSION['prenom'] ?><br />
 					Date<br />
 					Texte<br />
 				</p>

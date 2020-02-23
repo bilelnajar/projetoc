@@ -1,42 +1,50 @@
-  <!-- Login membre-->
-      <section> 
-        <div id="login">
-          <form method="post" action="login.php">
-            <p>
-              <fieldset>
-                <legend>Compte existant</legend>
-                <label for="pseudo">Votre pseudo :</label>
-                <input type="text" name="pseudo" id="pseudo" required />           
-                <br />
-                <label for="password">Votre mot de passe :</label>
-                <input type="password" name="password" id="password" required /><br />
-                <div class="bouton"><input type="submit" value="Connexion" /></div>
+<?php require('pdo.php');
+// check variable
 
-                <?php require('pdo.php');
-                // check variable
-                if (isset($_POST['pseudo']) && isset($_POST['password']))
+if (isset($_POST['username']) && isset($_POST['password'])) {
 
-                  $reponse = $bdd->query("SELECT * FROM Account WHERE username='" . $_POST['pseudo'] . "' AND password='" . $_POST['password'] . "'");
+  $query = $bdd->prepare("SELECT * FROM Account WHERE username='" . $_POST['username'] . "'");
 
-                while ($donnees = $reponse->fetch())
-                {
-                  header("Location:./index.php?user=" . $donnees['nom'] . " " . $donnees['prenom']);
-                }
+  $query->execute();
+  $row = $query->fetch();
+  var_dump(isset($row['password']));
+  if (isset($row['password']) && password_verify($_POST['password'], $row['password']))
+  {
 
-    //            else {
-    //                echo "Identifiant non reconnu, Veuillez vous inscrire en cliquant sur le lien ci-dessous !";  AFFICHE ERREUR
-    //              }                 
-              ?>
-              
-            </fieldset>
+// démarage de la session
+    session_start();
 
-            <a href="">Mot de passe oublié ?</a>
-          </p>
-        </form>
-      </div>
+// Recuperaton des variables nom et prenom dans $_SESSION
+    $_SESSION['nom'] = $row['nom'];
+    $_SESSION['prenom'] = $row['prenom'];
 
-      <div id="nouveau">
-        <h2>Vous êtes un nouveau membre</h2>
-        <a href="inscription.php">Inscription</a>
+    header("Location:./index.php");
+  } 
+}        
+?>
 
-      </div>	
+<!-- Login membre-->
+<section> 
+  <div id="login">
+    <form method="post">
+      <p>
+        <fieldset>
+          <legend>Compte existant</legend>
+          <label for="username">Votre pseudo :</label>
+          <input type="text" name="username" id="username" required />           
+          <br />
+          <label for="password">Votre mot de passe :</label>
+          <input type="password" name="password" id="password" required /><br />
+          <div class="bouton"><input type="submit" value="Connexion" /></div>             
+        </fieldset>
+
+        <a href="">Mot de passe oublié ?</a>
+      </p>
+    </form>
+  </div>
+
+  <div id="nouveau">
+    <h2>Vous êtes un nouveau membre</h2>
+    <a href="inscription.php">Inscription</a>
+
+  </div>	

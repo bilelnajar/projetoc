@@ -12,7 +12,6 @@
     text-decoration: none; 
 }
 
-
 /* --- CSS page index--- */
 body
 {
@@ -48,7 +47,6 @@ i
 }
 #presentation
 {
-    display: none;
 }
 #presentation h1
 {
@@ -73,7 +71,6 @@ li
 
 #partenaires
 {
-    display: none;
     margin-top: 50px;
     margin-bottom: 50px;
 }

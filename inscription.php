@@ -1,26 +1,59 @@
+<?php
+require('pdo.php');
 
+if (
+  isset($_POST['nom']) &&
+  isset($_POST['prenom']) &&
+  isset($_POST['username']) &&
+  isset($_POST['password'])
+) {
+
+// Hachage du mot de passe
+  $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+// Insertion des valeurs dans la BDD via le formulaire
+  $req = $bdd->prepare('INSERT INTO Account(nom, prenom, username, password, question, reponse) VALUES(:nom, :prenom, :username, :password, :question, :reponse)');
+  $req->execute(array(
+    'nom' => $_POST['nom'],
+    'prenom' => $_POST['prenom'],
+    'username' => $_POST['username'],
+    'password' => $pass_hache,
+    'question' => $_POST['question'],
+    'reponse' => $_POST['reponse']
+  ));
+
+// démarage de la session
+  session_start();
+
+// Recuperaton des variables nom et prenom dans $_SESSION
+  $_SESSION['nom'] = $_POST['nom'];
+  $_SESSION['prenom'] = $_POST['prenom'];
+
+  header("Location:./index.php");
+}
+?>
 
 <!DOCTYPE html>
-  <html>
-    <head>
-      <meta charset="utf-8" />
-      <link rel="stylesheet" href="style.css" />        
-      <title>Inscription</title>
-    </head>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="style.css" />        
+  <title>Inscription</title>
+</head>
 
-    <body>
+<body>
 
-<!-- En tête -->
-    <header>
-          <figure>
-            <img class="logologin" src="images/logo-gbaf.png" alt="logo de gbaf" />
-          </figure>
-    </header>
- 
-<!-- login nouveau membre--> 
+  <!-- En tête -->
+  <header>
+    <figure>
+      <img class="logologin" src="images/logo-gbaf.png" alt="logo de gbaf" />
+    </figure>
+  </header>
+
+  <!-- login nouveau membre--> 
   <section>
     <div class="nouveau">		
-      <form method="post" action="index.php">
+      <form method="post" action="inscription.php">
       	<p>
       		<fieldset>
       			<legend>Nouveau membre</legend>
@@ -42,18 +75,6 @@
             <input type="text" name="reponse" id="reponse" required />  
             <br />
             <button type="submit" class="forminscription">M'inscrire</button>
-
-<!-- Connexion en php à la base de données-->
-
-<?php require 'pdo.php'; 
-
-$req = $bdd->prepare('INSERT INTO Account(nom, prenom, username, password, question, reponse) VALUES(:nom, :prenom, :username, :password, :question, :reponse)');
-
-$req->execute(array($_POST['nom'], $_POST['prenom'], $_POST['username'], $_POST['password'], $_POST['question'], $_POST['reponse']));
-
-header('location: index.php');
-?>
-
           </fieldset>
         </p>
       </form>		
@@ -63,5 +84,5 @@ header('location: index.php');
 
   <?php include("pieddepage.php"); ?>
 
-  </body>
+</body>
 </html>
